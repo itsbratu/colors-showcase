@@ -1,0 +1,157 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e6e6fa;  /* Soft lavender */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.1s ease;
+}
+
+.navbar a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.1s ease-out;
+}
+
+/* Navbar hover effect */
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+/* Color-specific navbar styles */
+.navbar .red { background: #E63946; }
+.navbar .orange { background: #F4A261; }
+.navbar .yellow { background: #E9C46A; }
+.navbar .green { background: #2A9D8F; }
+.navbar .teal { background: #00A896; }
+.navbar .blue { background: #457B9D; }
+.navbar .indigo { background: #4B0082; }
+.navbar .purple { background: #9B5DE5; }
+.navbar .pink { background: #F72585; }
+.navbar .brown { background: #7F4A35; }
+.navbar .gray { background: #6D6875; }
+.navbar .black { background: #000000; }
+
+/* Smooth scrolling for links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container styles */
+.container {
+    padding-top: 50px;
+}
+
+/* Color box styles */
+.color-box {
+    width: 99%;
+    height: 45vh;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Color-specific box styles */
+.color-box.red { background: #E63946; }
+.color-box.orange { background: #F4A261; }
+.color-box.yellow { background: #E9C46A; color: #333; }
+.color-box.green { background: #2A9D8F; }
+.color-box.teal { background: #00A896; }
+.color-box.blue { background: #457B9D; }
+.color-box.indigo { background: #4B0082; }
+.color-box.purple { background: #9B5DE5; }
+.color-box.pink { background: #F72585; }
+.color-box.brown { background: #7F4A35; }
+.color-box.gray { background: #6D6875; }
+.color-box.black { background: #000000; color: #fff; }
+
+/* Go to top button styles */
+.go-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #457B9D;
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Make button visible when scrolled */
+body {
+    min-height: 2000px; /* Ensure page has a scroll */
+}
+
+.go-to-top {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    padding-bottom: 8px;
+    background-color: #e6e6fa;  /* Soft lavender */
+    color: black
+}
+
+body:has(.go-to-top) .go-to-top {
+    opacity: 1;
+    visibility: visible;
+}
+
+.go-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* Style for the sound icon */
+.color-box .color-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.color-box .color-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Optional: Add some hover effect on icon */
+.color-box .color-icon i {
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.color-box .color-icon i:hover {
+    transform: scale(1.1);
+}
+
