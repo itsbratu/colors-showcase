@@ -1,4 +1,3 @@
-/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,60 +5,74 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Navbar styles */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #e6e6fa;  /* Soft lavender */
-    padding: 10px 0;
+    background-color: #e6e6fa;
+    padding: 10px 20px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: background-color 0.1s ease;
 }
 
-.navbar a {
-    width: 40px;
-    height: 40px;
+.navbar-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: black;
+    margin-left: 10px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-right: 100px;
+    flex-grow: 1;
+}
+
+.navbar-links a {
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: inline-block;
     transition: transform 0.1s ease-out;
 }
 
-/* Navbar hover effect */
-.navbar a:hover {
+.navbar-links a:hover {
     transform: scale(1.1);
 }
 
-/* Color-specific navbar styles */
 .navbar .red { background: #E63946; }
+.navbar .pink { background: #F72585; }
+.navbar .brown { background: #7F4A35; }
 .navbar .orange { background: #F4A261; }
-.navbar .yellow { background: #E9C46A; }
-.navbar .green { background: #2A9D8F; }
+.navbar .yellow { background: #e8e337; }
+.navbar .green { background: #90ee90; }
 .navbar .teal { background: #00A896; }
 .navbar .blue { background: #457B9D; }
 .navbar .indigo { background: #4B0082; }
 .navbar .purple { background: #9B5DE5; }
-.navbar .pink { background: #F72585; }
-.navbar .brown { background: #7F4A35; }
 .navbar .gray { background: #6D6875; }
 .navbar .black { background: #000000; }
 
-/* Smooth scrolling for links */
 html {
     scroll-behavior: smooth;
 }
 
-/* Container styles */
+.palette {
+    font-size: 25px;
+}
+
 .container {
     padding-top: 50px;
 }
 
-/* Color box styles */
 .color-box {
     width: 99%;
     height: 45vh;
@@ -70,13 +83,19 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Color-specific box styles */
+.color-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .color-box.red { background: #E63946; }
 .color-box.orange { background: #F4A261; }
-.color-box.yellow { background: #E9C46A; color: #333; }
-.color-box.green { background: #2A9D8F; }
+.color-box.yellow { background: #e8e337; color: #333; }
+.color-box.green { background: #72bf6a; }
 .color-box.teal { background: #00A896; }
 .color-box.blue { background: #457B9D; }
 .color-box.indigo { background: #4B0082; }
@@ -86,7 +105,42 @@ html {
 .color-box.gray { background: #6D6875; }
 .color-box.black { background: #000000; color: #fff; }
 
-/* Go to top button styles */
+.color-box.red:hover { background: #D52C3C; }
+.color-box.orange:hover { background: #F28C4B; }
+.color-box.yellow:hover { background: #e1d53e; }
+.color-box.green:hover { background: #66ab56; }
+.color-box.teal:hover { background: #009F82; }
+.color-box.blue:hover { background: #3B6F7D; }
+.color-box.indigo:hover { background: #3E006F; }
+.color-box.purple:hover { background: #7E4EDE; }
+.color-box.pink:hover { background: #F31C72; }
+.color-box.brown:hover { background: #6A3A28; }
+.color-box.gray:hover { background: #58505A; }
+.color-box.black:hover { background: #333333; }
+
+.color-box .color-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.color-box .color-icon:hover {
+    transform: scale(1.2);
+}
+
+.color-box .color-icon i {
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.color-box .color-icon i:hover {
+    transform: scale(1.1);
+}
+
 .go-to-top {
     position: fixed;
     bottom: 20px;
@@ -107,9 +161,8 @@ html {
     transition: transform 0.2s ease, opacity 0.3s ease;
 }
 
-/* Make button visible when scrolled */
 body {
-    min-height: 2000px; /* Ensure page has a scroll */
+    min-height: 2000px;
 }
 
 .go-to-top {
@@ -117,7 +170,7 @@ body {
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     padding-bottom: 8px;
-    background-color: #e6e6fa;  /* Soft lavender */
+    background-color: #e6e6fa;
     color: black
 }
 
@@ -130,28 +183,40 @@ body:has(.go-to-top) .go-to-top {
     transform: scale(1.1);
 }
 
-/* Style for the sound icon */
-.color-box .color-icon {
-    position: absolute;
+.floating-message {
+    position: fixed;
     bottom: 10px;
-    right: 10px;
+    left: 10px;
+    background-color: #e6e6fa;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-arrow {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 20px;
     cursor: pointer;
-    font-size: 2rem;
-    color: white;
     transition: transform 0.3s ease;
 }
 
-.color-box .color-icon:hover {
+.toggle-arrow:hover {
     transform: scale(1.2);
 }
 
-/* Optional: Add some hover effect on icon */
-.color-box .color-icon i {
-    font-size: 24px;
-    transition: transform 0.3s;
+#floating-message-text {
+    display: block;
 }
 
-.color-box .color-icon i:hover {
-    transform: scale(1.1);
+.x-button {
+    font-size: 16px;
 }
-
