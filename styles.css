@@ -1,12 +1,15 @@
+/* General styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    min-height: 2000px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* Navbar Styling */
 .navbar {
     position: fixed;
     top: 0;
@@ -65,10 +68,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.palette {
-    font-size: 25px;
-}
-
+/* Color Box Styling */
 .container {
     padding-top: 50px;
 }
@@ -118,29 +118,7 @@ html {
 .color-box.gray:hover { background: #58505A; }
 .color-box.black:hover { background: #333333; }
 
-.color-box .color-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 2rem;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-.color-box .color-icon:hover {
-    transform: scale(1.2);
-}
-
-.color-box .color-icon i {
-    font-size: 24px;
-    transition: transform 0.3s;
-}
-
-.color-box .color-icon i:hover {
-    transform: scale(1.1);
-}
-
+/* Go To Top Button */
 .go-to-top {
     position: fixed;
     bottom: 20px;
@@ -161,10 +139,6 @@ html {
     transition: transform 0.2s ease, opacity 0.3s ease;
 }
 
-body {
-    min-height: 2000px;
-}
-
 .go-to-top {
     opacity: 0;
     visibility: hidden;
@@ -183,6 +157,7 @@ body:has(.go-to-top) .go-to-top {
     transform: scale(1.1);
 }
 
+/* Floating Message */
 .floating-message {
     position: fixed;
     bottom: 10px;
@@ -219,4 +194,10 @@ body:has(.go-to-top) .go-to-top {
 
 .x-button {
     font-size: 16px;
+}
+
+@media (max-width: 350px) {
+    .navbar-title {
+        margin-right: 15px;
+    }
 }
